@@ -9,7 +9,7 @@
 
 
 # 系统安装
-	1. CentOS7.2以上系统
+	1. CentOS8.0以上系统
 	2.	安装Nginx,
 		yum install -y nginx  
 		将站指向程序中的$path/daifu/web目录
