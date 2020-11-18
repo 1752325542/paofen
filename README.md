@@ -17,7 +17,7 @@
 		yum -y install postgresql-server
 		service postgresql initdb
 		service postgresql restart
-		并建创建数据库名称:pf,将Postgres密码修改为：devops,数据库备分见：$/doc/db.sql
+		并建创建数据库名称:pay,将Postgres密码修改为：devops,数据库备分见：$/doc/db.sql
 	4.	运行$path/cmd/main数据服务,及可以正常运行,注$path为环境变量
 	5.	管理员账号和密码都是：admin
 	
