@@ -1,6 +1,6 @@
 # 系统截图
-![image](https://github.com/1752325542/daifu/blob/master/doc/1.png)
-![image](https://github.com/1752325542/daifu/blob/master/doc/2.png)
+![image](https://github.com/1752325542/paofen/blob/master/doc/1.png)
+![image](https://github.com/1752325542/paofen/blob/master/doc/2.png)
 
 
 # 使用说明
