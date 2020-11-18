@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://pay.dnpay.net/ali/s/2020032721201132195 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="apple-mobile-web-app-capable" content="no">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-status-bar-style" content="white">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-control" content="no-cache">
+		<meta http-equiv="Cache" content="no-cache">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>在线提交</title>
+		<script type="text/javascript" src="utils/jq.js?v=v2"></script>
+		<script type="text/javascript" src="utils/comm.js?v=v2"></script>
+		<script type="text/javascript" src="utils/jsencrypt.min.js?v=22"></script>
+		<script type="text/javascript" src="utils/axios.min.js"></script>
+
+	
+			
+
+</head>
+	<body>
+		<div style="text-align: center;">
+	
+			
+			<p>商场编号：<input id="mallid" style="width: 300px;height: 30px;" placeholder="请输入商场编号"/></p>
+		
+			<p>收银机号：<input id="tillid" style="width: 300px;height: 30px;" placeholder="请输入收银机号"/></p>
+			<p>店铺账号：<input id="storecode" style="width: 300px;height: 30px;" placeholder="请输入店铺账号"/></p>
+			<p>销售单号：<input id="txdocno" style="width: 300px;height: 30px;" placeholder="请输入销售单号"/></p>
+			<p>收银员号：<input id="cashier" style="width: 300px;height: 30px;" placeholder="请输入收银员号"/></p>
+			<p>商品编号：<input id="itemcode" style="width: 300px;height: 30px;" placeholder="请输入商品编号"/></p>
+			<p>商品数量：<input id="qty" style="width: 300px;height: 30px;" placeholder="请输入商品数量"/></p>
+			<p>支付方式：<input name="tendercode" checked type="radio" value="CH" >现金</input>
+				<input name="tendercode" type="radio" value="CI" >国内银行卡</input>
+				<input name="tendercode" type="radio" value="CO" >国外银行卡</input>
+				<input name="tendercode" type="radio" value="OT" >其他付款方式</input>
+			
+			</p>
+			<p>交易日期：<input id="txDate" value="2020-09-25" style="width: 300px;height: 30px;" placeholder="请输入交易日期"/></p>
+			
+		
+			<p>付款金额：<input id="payamount" style="width: 300px;height: 30px;" placeholder="请输入付款金额"/></p>
+			<p><button style="width: 300px;height: 30px;" onclick="post()">快速提交</button></p>
+	
+		</div>
+		
+
+	</body>
+
+<script type="text/javascript">
+
+
+function post(){
+
+	var args={
+
+		tendercode:$('input:radio:checked').val(),
+		mallid:$('#mallid').val(),
+		tillid:$('#tillid').val(),
+		storecode:$('#storecode').val(),
+		txdocno:$('#txdocno').val(),
+		cashier:$('#cashier').val(),
+		itemcode:$('#itemcode').val(),
+		qty:$('#qty').val(),
+		txDate:$('#txDate').val(),
+		payamount:$('#payamount').val(),
+	}
+
+
+	if(args.mallid==''){
+		alert("请输入商场编号")
+		return
+	}else if(args.tillid==''){
+		alert("请输入收银机号")
+		return
+	}else if(args.storecode==''){
+		alert("请输入店铺账号")
+		return
+	}else if(args.txdocno==''){
+		alert("请输入销售单号")
+		return
+	}else if(args.cashier==''){
+		alert("请输入收银员号")
+		return
+	}else if(args.itemcode==''){
+		alert("请输入商品编号")
+		return
+	}else if(args.qty==''){
+		alert("请输入商品数量")
+		return
+	}else if(args.txDate==''){
+		alert("请输入交易日期")
+		return
+	}else if(args.payamount==''){
+		alert("请输入付款金额")
+		return
+	}
+
+
+		//console.log(args)
+	
+
+
+	comm.post({url:"/dev/order/fast",data:args,callback:function(data){
+
+		alert("操作成功")
+
+}})
+
+
+
+}
+
+function upload(){
+
+	ap.scan(
+      {type:'qr' },//默认qr  可选有bar 条形码  qr 二维码
+      function(res){
+		
+		$("#txtUrl").val(res.code)
+		// alert(res.code)
+       // console.log(res.code); /* 查询到的信息 */
+        //do something...
+  })
+
+}
+			
+</script>
+
+</html>

@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" > 
+<title>Galleon Aerospace Conference Registration</title>
+<link rel="stylesheet" type="text/css" href="/select/select.css?v=1223232">
+<link rel="stylesheet" type="text/css" href="/select/style.css?v=34">
+<link rel="stylesheet" type="text/css" href="http://www.galleon.cc/css/css.css">
+
+	   <script src="/select/jquery.min.js"></script>
+    <script src="/select/select.js?v=12"></script>
+	
+	 <script >
+	
+	     $(function () {
+            $("#conference").mySelect();
+      
+        });
+		</script>
+</head>
+
+<body>
+ <div class="top">
+        <div class="top_box">
+            <div class="logo10">
+                <a href="index.asp">
+                    <img src="images/logo_03.png" width="235" height="50" /></a>
+            </div>
+            <div class="txtbox">
+                <div class="soso">
+                    <form method="post" name="form1" id="form1" action="press.asp?menu=search" class="signform">
+                        <dl>
+
+                            <dt>
+                                <input class="reg-input" name="texts" type="text" value="Search here" onfocus="if(this.value=='Search here'){this.value=''}" onblur="if(this.value==''){this.value='Search here'}" /></dt>
+                            <dd>
+                                <input class="reg-input" type="image" src="images/soso_03.jpg" width="22" height="23" align="left" /></dd>
+                        </dl>
+                    </form>
+                </div>
+               <div class="txtbox_w"><a href="/zh">中文</a><span>|</span><a href="../index.asp">ENGLISH</a></div>
+                <div class="txtbox_f"><a href="download1.asp">Previous Event Proceedings</a></div>
+                 <div class="txtbox_f"><a href="Registration.asp">Galleon Aerospace Conference Registration </a></div>
+            </div>
+            <div class="nav">
+                <a href="pro.asp">Business</a><span>|</span>
+                <a href="Partnership_show.asp">Partnership</a><span>|</span>
+                <a href="press.asp">Press</a><span>|</span>
+                <a href="company.asp">Company</a><span>|</span>
+                <a href="Career.asp">Career</a>
+            </div>
+        </div>
+    </div>
+<div class="wrapper">
+<div class="box">
+	
+	<div class="middel">
+		<div class="mid_left">
+			<div class="reg">
+<script type="text/javascript" language="javascript">
+	function addms()
+			{
+				if($("#First_name").val()=="")
+				{
+					alert("First Name is null")
+					return false;
+				}
+				if($("#Last_name").val()=="")
+				{
+					alert("Last Name is null")
+					return false;
+				}
+				if($("#Title").val()=="")
+				{
+					alert("Job Title is null")
+					return false;
+				}
+				if($("#tel").val()=="")
+				{
+					alert("Phone is null")
+					return false;
+				}
+
+			}
+</script>
+<div style="width:680px; height:1070px; background:url(images/bggg.png) no-repeat; padding-top:40px;">
+<form action="?action=add" method="post" name="form1" id="form1" onsubmit="return addms()">
+<table border="1" bordercolor="#c6c6c6" width="600" style="border-collapse:collapse; margin-left:auto; margin-right:auto;">
+	<tr height="50">
+    	<td colspan="2" align="center" ><img src="images/hua.png"><div style="font-weight:bold; font-size:20px; color:#00869E; text-align:center; padding-bottom:8px;">(* Required)</div></td>
+    </tr>
+	<tr height="50">
+    	<td width="170" align="left"><label>Conference Name:</label></td>
+        <td width="450" style="padding-left:10px; padding-right:10px; font-weight:bold; color:#333;"> 
+
+    
+
+		<div  id="conference" class="selectPickerWrapper">
+		
+		<select  class="hidden" multiple="multiple">
+	
+		<option value="CAESH2020">Commercial Aero Engine Shanghai International Forum</option>
+		<option value="ATM4">International Symposium on Air Traffic Management for Civil Aviation</option>
+		<option value="CACC2020">Connected Aircraft China Congress</option>
+		<option value="CAIF2020">Civil Avionics International Forum</option>
+		<option value="ATM5">China Air Traffic Management Development Forum</option>
+		<option value="MRO">Civil Aircraft Operation Support Technology International Forum</option>
+		<option value="CHIIF">Civil Helicopter Industry International Forum</option>
+		<option value="CATF">Civil Aviation Training International Forum</option>
+		<option value="CAIIF">Civil Aircraft Industry International Forum</option>
+		<option value="Engine Simulation">Gas Turbine Engine Simulation Technology Development Forum</option>
+		<option value="Aviation Shanghai">China Aviation Industry Shanghai International Summit</option>
+		<option value="Smart Electric">Smart Electric Technology International Forum</option>
+		<option value="Customer Loyalty">Civil Aviation Customer Loyalty Management Forum</option>
+		<option value="Materials">China Aeronautical Materials and Process Summit</option>
+		</select>
+		
+		
+		</div>
+		
+    </td>	
+	</tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>I would like to be:</label></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><div class="check">
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Delegate</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Sponsor</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Speaker, Please Contact Me</span>
+        </div>
+        <div class="check" >
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Get Brochure</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Organizing Committee Member</span>
+        
+        </div>
+        </td>
+    </tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>First Name:</label><span style="color:red;">*</span></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="f_name" id="First_name"></td>
+    </tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>Last Name:</label><span style="color:red;">*</span></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="l_name" id="First_name"></td>
+    </tr>
+    
+	<tr height="50">
+    	<td width="150" align="left"><label>Job Title:</label><span style="color:red;">*</span></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="job" id="First_name"></td>
+    </tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>Company Name:</label><span style="color:red;">*</span></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="com" id="First_name"></td>
+    </tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>Address:</label></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="First_name" id="First_name"></td>
+    </tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>Zip Code:</label></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="First_name" id="First_name"></td>
+    </tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>Country:</label><span style="color:red;">*</span></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="country" id="First_name"></td>
+    </tr>
+    <tr height="50">
+    	<td width="150" align="left"><label>Tel:</label><span style="color:red; float:left">*</span></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="phone" id="First_name"></td>
+    </tr>
+     <tr height="50">
+    	<td width="150" align="left"><label>Fax:</label></td>
+        <td width="450" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="First_name" id="First_name"></td>
+    </tr>
+    <tr height="50">
+    	<td width="120"><label>Email:</label><span style="color:red;">*</span></td>
+        <td width="375" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="email" id="First_name"></td>
+       
+    </tr>
+    <tr height="50">
+    	<td width="120"><label>Mobile:</label></td>
+        <td width="375" style="padding-left:10px; padding-right:10px;"><input class="reg-input" type="text" name="First_name" id="First_name"></td>
+
+        
+    </tr>
+    <tr height="100">
+    	<td width="120"><label>How did you find us?</label></td>
+        <td width="375" style="padding-left:10px; padding-right:10px;"><div class="check">
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Internet Search</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Link on a Site</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Email</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Fax</span></div>
+        
+        <div class="check" >
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Brochure</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Previous</span>
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Social Software Platform</span></div>
+        
+        <div class="check" >
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Others (Please Specify)</span>
+        <input class="reg-input" type="text" style="border:1px solid #d8d8d8; height:18px; width:150px;">
+        
+        </div>
+        <div class="check" >
+        <input class="reg-input" type="checkbox" name="other" value="Send me email updates"><span>Salesperson (Please Specify) </span>
+        <input class="reg-input" type="text" style="border:1px solid #d8d8d8; height:18px; width:150px; margin-top:4px;">
+        
+        </div>
+        
+        
+        
+        
+        </td>
+       <tr>
+       	<td colspan="2"><div class="cont_btn" style="margin-top:8px; margin-bottom:8px;"><input class="reg-input" type="image" src="images/btns.png"></div></td>
+       </tr>
+       <tr>
+       	<td colspan="2" align="center" style="padding-top:8px; margin-bottom:8px;"><img src="images/hua1.png"></td>
+       </tr>
+       
+    </tr>
+</table>
+
+
+
+
+
+</form>
+</div>
+</div>
+			</div>
+		</div>
+	<style type="text/css">
+.riban2{position:relative;width:208px; height:219px;margin:0 auto}
+#banner {position:relative; width:208px; height:219px; overflow:hidden;}
+#banner_list img {border:0px;}
+#banner_bg {position:absolute; bottom:0;background-color:#000;height:30px;filter: Alpha(Opacity=30);opacity:0.3;z-index:1000;cursor:pointer; width:208px; }
+#banner_info{position:absolute; bottom:0; left:5px;height:22px;color:#fff;z-index:1001;cursor:pointer}
+#banner_text {position:absolute;width:120px;z-index:1002; right:3px; bottom:3px;}
+#banner ul {position:absolute;list-style-type:none;filter: Alpha(Opacity=80);opacity:0.8; z-index:1002;margin:0; padding:0; bottom:3px; right:5px;display:none}
+#banner ul li { padding:0px 8px;float:left;display:block;color:#FFF;background:#6f4f67;cursor:pointer}
+#banner ul li.on { background:#900}
+#banner_list a{position:absolute;}
+</style>
+<div class="mid_right">
+				
+			</div>
+			
+
+		</div>
+	</div>
+   
+ <div class="bottom">
+        <div class="bottom1">
+            <div class="bottom1_box">
+                <div class="bottom1_box_boix">
+                    <dl>
+                        <dt>Business</dt>
+
+                        <dd><a href="business.asp?cla=4">Product Agency</a></dd>
+
+                        <dd><a href="business.asp?cla=3">Aviation Events & Conferences</a></dd>
+
+                        <dd><a href="business.asp?cla=2">Insights and Promotion</a></dd>
+
+                        <dd><a href="business.asp?cla=1">Aviation Club & Community </a></dd>
+
+                    </dl>
+                    <dl>
+                        <dt>Partnership</dt>
+
+                        <dd><a href="partnership.asp">Official Endorsement</a></dd>
+
+                        <dd><a href="part_Single2.asp">Sponsorship</a></dd>
+                        <dd><a href="part_Single.asp">Media & Association Partnership </a></dd>
+
+                        <dd><a href="partnership2.asp">Project Advisory Board</a></dd>
+
+                    </dl>
+                    <dl>
+                        <dt>Press</dt>
+
+                        <dd><a href="press.asp?cla=9">Latest Media Release</a></dd>
+
+                        <dd><a href="press.asp?cla=10">Client Stories</a></dd>
+
+                        <dd><a href="press.asp?cla=11">Company News</a></dd>
+                        <dd><a href="video.asp">Video</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>Company</dt>
+
+                        <dd><a href="company.asp?id=30">History</a></dd>
+
+                        <dd><a href="company.asp?id=31">Vision , Mission & Values</a></dd>
+
+                        <dd><a href="company.asp?id=32">Testimonials</a></dd>
+
+                        <dd><a href="contact.asp">Contact us</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>Career</dt>
+
+                        <dd><a href="Career.asp?id=33">Personnel Development</a></dd>
+
+                        <dd><a href="Career.asp?id=34">Brilliant Experience</a></dd>
+
+                        <dd><a href="Career.asp?id=35">Work for us</a></dd>
+
+                    </dl>
+                </div>
+
+                <div class="bottom_but">
+                    <dl>
+                        <dt><a href="index.asp">
+                            <img src="images/eee.png" width="163" height="34" align="left" /></a></dt>
+                        <dd>&copy; 2013  Galleon  Corp. All Rights Reserved.
+                    	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261115874'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1261115874%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+                            <script src="//platform.linkedin.com/in.js" type="text/javascript">
+ lang: en_US
+                            </script>
+                            <script type="IN/FollowCompany" data-id="4988820" data-counter="right"></script>
+							<a href="http://218.242.124.22:8081/businessCheck/verifKey.do?showType=extShow&serial=9031000020180918165533000002845349-SAIC_SHOW_310000-4028e4cb6493ac2c0164cc56b1b2266b666&signData=MEQCIBjDfSGCQeeISH2ggRIj8XFa82FlgKSa/je6nu1lAZGEAiB004fd5y8jNDWUTmrZ4fqxp13gHoeb8zFyVYPL5NssWQ=="><img src="icon.jpg" height="30" /></a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
