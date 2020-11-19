@@ -970,7 +970,7 @@ ALTER SEQUENCE std_orders_id_seq OWNED BY std_orders.id;
 -- Name: std_orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('std_orders_id_seq', 18469, true);
+SELECT pg_catalog.setval('std_orders_id_seq', 18475, true);
 
 
 --
@@ -990,7 +990,9 @@ CREATE TABLE std_recbanks (
     updated_at timestamp with time zone,
     created_at timestamp with time zone,
     member_id bigint DEFAULT 0,
-    round_id bigint DEFAULT 0
+    round_id bigint DEFAULT 0,
+    max bigint DEFAULT 0,
+    min bigint DEFAULT 0
 );
 
 
@@ -1021,7 +1023,7 @@ ALTER SEQUENCE std_recbanks_id_seq OWNED BY std_recbanks.id;
 -- Name: std_recbanks_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('std_recbanks_id_seq', 7, true);
+SELECT pg_catalog.setval('std_recbanks_id_seq', 10, true);
 
 
 --
@@ -1318,7 +1320,7 @@ ALTER SEQUENCE std_users_id_seq OWNED BY std_users.id;
 -- Name: std_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('std_users_id_seq', 102, true);
+SELECT pg_catalog.setval('std_users_id_seq', 109, true);
 
 
 --
@@ -3729,7 +3731,11 @@ COPY std_order_info (id, item_id, order_id, user_id, status, num, attr, created_
 --
 
 COPY std_orders (id, channel_id, member_id, type, method, status, amount, agency, fee, rate, user_id, notify_count, name, bank_code, bank_name, bank_province, bank_city, note, order_sn, number, out_trade_no, notify, ip, item_id, pay_time, refund_time, updated_at, created_at, ukey, balance, expire_at, poset, bank_id) FROM stdin;
-18469	0	85	1	0	5	100	0	0	0	102	1						回调成功		aa8dc79e9287ead62e54b1c565f00802	aa8dc79e9287ead62e54b1c565f00802	http://27.124.3.160:5566/api/notify/test	192.168.3.3	1	0001-01-01 08:05:57+08:05:57	0001-01-01 08:05:57+08:05:57	2020-11-18 15:13:56.124221+08	2020-11-18 15:13:34.254982+08		0	0001-01-01 08:05:57+08:05:57	99.99	7
+18473	0	85	1	0	1	800	0	0	0	109	0			王强			下单成功		edef49509f7993f128c39e903237c49d	edef49509f7993f128c39e903237c49d	http://27.124.3.160:5566/api/notify/test	192.168.3.3	1	0001-01-01 08:05:57+08:05:57	0001-01-01 08:05:57+08:05:57	2020-11-19 10:11:28.691483+08	2020-11-19 10:11:28.691483+08		0	0001-01-01 08:05:57+08:05:57	799.99	9
+18474	0	85	1	0	1	600	0	0	0	109	0	王强	123456				下单成功		f89fa163cffd04c1fb96f5c4d16176e7	f89fa163cffd04c1fb96f5c4d16176e7	http://27.124.3.160:5566/api/notify/test	192.168.3.3	1	0001-01-01 08:05:57+08:05:57	0001-01-01 08:05:57+08:05:57	2020-11-19 10:13:50.462551+08	2020-11-19 10:13:50.462551+08		0	0001-01-01 08:05:57+08:05:57	599.99	9
+18475	0	85	1	0	5	600	0	0	0	109	0	王强	123456				回调成功		d08b865b10ce71058092a0a678b87f69	d08b865b10ce71058092a0a678b87f69	http://27.124.3.160:5566/api/notify/test	192.168.3.3	1	0001-01-01 08:05:57+08:05:57	0001-01-01 08:05:57+08:05:57	2020-11-19 10:17:17.730064+08	2020-11-19 10:17:17.730064+08		0	0001-01-01 08:05:57+08:05:57	599.98	9
+18471	0	85	1	0	1	100	0	0	0	109	0						下单成功		c3084701b90df3eaad0162438b0a64c2	c3084701b90df3eaad0162438b0a64c2	http://27.124.3.160:5566/api/notify/test	192.168.3.3	1	0001-01-01 08:05:57+08:05:57	0001-01-01 08:05:57+08:05:57	2020-11-19 10:06:22.49305+08	2020-11-19 10:06:22.49305+08		0	0001-01-01 08:05:57+08:05:57	99.99	9
+18472	0	85	1	0	1	500	0	0	0	109	0						下单成功		b1ee1e35554b35450eac0d54a023c6b2	b1ee1e35554b35450eac0d54a023c6b2	http://27.124.3.160:5566/api/notify/test	192.168.3.3	1	0001-01-01 08:05:57+08:05:57	0001-01-01 08:05:57+08:05:57	2020-11-19 10:06:34.11872+08	2020-11-19 10:06:34.11872+08		0	0001-01-01 08:05:57+08:05:57	499.99	9
 \.
 
 
@@ -3737,8 +3743,8 @@ COPY std_orders (id, channel_id, member_id, type, method, status, amount, agency
 -- Data for Name: std_recbanks; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY std_recbanks (id, type, status, user_id, branch, channel_id, bank_id, name, code, updated_at, created_at, member_id, round_id) FROM stdin;
-7	0	1	102		0	1	张三	123456	2020-11-18 13:54:03.159584+08	2020-11-18 13:54:03.159584+08	74	23
+COPY std_recbanks (id, type, status, user_id, branch, channel_id, bank_id, name, code, updated_at, created_at, member_id, round_id, max, min) FROM stdin;
+9	0	1	109		0	1	王强	123456	2020-11-19 10:05:59.672723+08	2020-11-19 10:05:53.939024+08	74	5	1000	1
 \.
 
 
@@ -50285,11 +50291,11 @@ COPY std_students (id, channel_id, member_id, type, status, refer_id, class_id, 
 --
 
 COPY std_users (id, channel_id, member_id, role_id, bank_id, sex, prov, city, dist, type, status, refer_id, uuid, point, level, exp, health, balance, rate, username, password, secret, openid, unionid, avatar, nickname, mobile, email, idcode, idname, "desc", address, bank_code, attach, birthday, updated_at, created_at, login_ip, login_time, round_id, frozen) FROM stdin;
+74	0	85	3	0	0	0	0	0	0	0	0	0	0	0	0	0	1200	0	150000	150000	OGVUTGTQJ3XN3NMLJV4HUQRDBKIFD4NL					150000			张夺				[]	0001-01-01 08:05:57+08:05:57	2020-11-18 11:00:47.140911+08	2020-09-08 21:46:18.864344+08	192.168.3.3	2020-11-19 11:02:21+08	0	0
 51	0	0	1	0	1	110000	110100	110101	0	0	0	0	0	0	0	0	0	0	root	DevopsAdmin2020						root	root		root				[]	0001-01-01 08:05:57+08:05:57	2020-02-09 09:04:00.914512+08	2020-02-09 09:04:00.914512+08	118.114.103.84	2020-03-07 17:30:03+08	0	0
-102	0	0	4	0	0	0	0	0	0	0	74	0	0	0	0	0	0	0	15000195452	15000195452									测试卡商					0001-01-01 08:05:57+08:05:57	2020-11-18 13:53:49.310553+08	2020-11-18 13:53:49.310553+08	192.168.3.3	2020-11-18 14:55:49+08	0	0
 75	0	0	2	0	0	0	0	0	0	0	0	0	0	0	0	0	0.08	0	dl	dl									dl					0001-01-01 08:05:57+08:05:57	2020-09-14 18:50:12.408486+08	2020-09-14 18:50:12.408486+08	192.168.1.8	2020-09-14 18:50:49+08	0	0
-74	0	85	3	0	0	0	0	0	0	0	0	0	0	0	0	0	1200	0	150000	150000	OGVUTGTQJ3XN3NMLJV4HUQRDBKIFD4NL					150000			张夺				[]	0001-01-01 08:05:57+08:05:57	2020-11-18 11:00:47.140911+08	2020-09-08 21:46:18.864344+08	192.168.3.3	2020-11-18 12:04:57+08	0	0
-1	0	1	1	0	1	110000	110100	110101	0	0	0	0	0	0	0	0	0	0	admin	admin	MZJDNPXESJB24PXAMJJWQPKDTO4QH3TN					admin			admin				[]	0001-01-01 08:05:57+08:05:57	2020-10-14 10:53:42.207523+08	2019-11-07 10:44:47.029688+08	192.168.3.3	2020-11-18 14:56:06+08	0	2
+109	0	0	4	0	0	0	0	0	0	0	74	0	0	0	0	0	0	0	15000195452	15000195452									李王					0001-01-01 08:05:57+08:05:57	2020-11-19 10:05:37.852377+08	2020-11-19 10:05:37.852377+08		0001-01-01 08:05:57+08:05:57	0	0
+1	0	1	1	0	1	110000	110100	110101	0	0	0	0	0	0	0	0	0	0	admin	admin	MZJDNPXESJB24PXAMJJWQPKDTO4QH3TN					admin			admin				[]	0001-01-01 08:05:57+08:05:57	2020-10-14 10:53:42.207523+08	2019-11-07 10:44:47.029688+08	192.168.3.3	2020-11-19 10:56:31+08	0	2
 \.
 
 
