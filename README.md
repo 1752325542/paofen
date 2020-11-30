@@ -1,11 +1,12 @@
+# 使用说明
+	1. 本系统仅限交流、可以免费用使用，如需购买源码联系 QQ：1310651206
+	2. doc/短信回调.apk (安卓监控APK)
+
 # 系统截图
 ![image](https://github.com/1752325542/paofen/blob/master/doc/1.png)
 ![image](https://github.com/1752325542/paofen/blob/master/doc/2.png)
 
 
-# 使用说明
-	1. 本系统仅限交流、可以免费用使用，如需购买源码联系 QQ：1310651206
-	2. doc/短信回调.apk (安卓监控APK)
 
 
 # 系统安装
